@@ -29,5 +29,8 @@ $ pycal-fetch # Fetch holidays in this year
 $ pycal-fetch -y 2015 # Fetch holidays in 2015
 ```
 
+## Usage
+Type `pycal --help` to see the usage.
+
 ## Screenshot
-![Screenshot](https://i.imgur.com/ekbGFfn.png)
+![Screenshot](https://i.imgur.com/W92JAX7.png)

@@ -13,7 +13,7 @@ import requests
 
 class PyCalendar(object):
     def __init__(self):
-        self.holidays = None
+        self.holidays = {}
 
     def load_holidays(self, path):
         with codecs.open(path, encoding='utf-8') as f:
@@ -95,7 +95,9 @@ def main(year, month, previous_month, next_month, show_holidays):
         return
 
     pycal = PyCalendar()
-    pycal.load_holidays(get_holidays_file_path())
+    holidays_file_path = get_holidays_file_path()
+    if os.path.isfile(holidays_file_path):
+        pycal.load_holidays(holidays_file_path)
 
     now = arrow.now()
     target_date = now.replace(year=year or now.year, month=month or now.month)
